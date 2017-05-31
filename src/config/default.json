@@ -1,0 +1,12 @@
+{
+   "metadata":{
+      "environment": "default",
+      "owner" : "marcos",
+      "purpose": "workshop",
+      "version": "0.0.1"
+   },
+   "app" : {
+      "logdir": "./logs",
+      "port": 3000
+   }
+}
