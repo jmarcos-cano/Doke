@@ -1,26 +1,28 @@
 version: '2'
 services:
   compiler:
-    environment:
-      - OUTPUT_DIR=${OUTPUT_DIR}
     image: ${BASE_IMAGE}
+    working_dir: /var/www/app/
     volumes:
       - ${SRC_CODE_DIR}:/var/www/app/
-      - ./bin:${OUTPUT_DIR}
-
-    entrypoint: ["/compile"]
+      #- ./${OUTPUT_DIR}:/${OUTPUT_DIR}
+    entrypoint: sh -c ${BUILD_COMMAND}
 
   image_generator:
     image: "${IMAGE}:${VERSION}"
     depends_on:
       - compiler
+    environment:
+      APP_HOME: /var/www/app
     build:
       context: .
       args:
-        bin_path: bin/_PublishedWebsites/
+        bin_path: src/
         GIT_COMMIT: ${GIT_COMMIT}
         GIT_BRANCH: ${GIT_BRANCH}
+        GIT_REPO: ${GIT_REPO}
         VERSION: ${VERSION}
-        SERVICE_VERSION_NUMBER: ${SERVICE_VERSION_NUMBER}
+        BUILD_DATE: ${BUILD_DATE}
+        BUILD_TAG: ${BUILD_TAG}
     entrypoint:
       - bash
