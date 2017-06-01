@@ -4,6 +4,9 @@ var fs = require('fs')
 const path = require('path');
 var app = express()
 var config = require('config');
+var os = require("os");
+
+var hostname=os.hostname();
 
 // STATIC CONFIG
 // VIEWS
@@ -13,6 +16,11 @@ app.use(express.static(__dirname + '/public'));
 // LOGGING
 var logdir = config.get('app.logdir') ;
 var info = config.get('metadata');
+
+
+
+
+
 var accessLogStream = fs.createWriteStream(path.join(logdir, 'access.log'), {flags: 'a'})
 app.use(morgan('combined', {stream: accessLogStream}))
 
@@ -44,6 +52,10 @@ app.get('/search.json', function (req, res) {
 
 app.get('/info| /info.json| info.html ', function(req,res) {
     res.send(info);
+});
+
+app.get('/host| /host.json ', function(req,res) {
+    res.send("Running inside: "+hostname);
 });
 
 
