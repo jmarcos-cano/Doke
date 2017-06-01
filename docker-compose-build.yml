@@ -8,12 +8,18 @@ services:
       #- ./${OUTPUT_DIR}:/${OUTPUT_DIR}
     entrypoint: sh -c ${BUILD_COMMAND}
 
-  image_generator:
+    
+    labels:
+      - ephemeral
+      - volatile
+      - compiler
+
+  docker_image_generator:
     image: "${IMAGE}:${VERSION}"
     depends_on:
       - compiler
-    environment:
-      APP_HOME: /var/www/app
+    entrypoint:
+      - bash
     build:
       context: .
       args:
@@ -24,5 +30,8 @@ services:
         VERSION: ${VERSION}
         BUILD_DATE: ${BUILD_DATE}
         BUILD_TAG: ${BUILD_TAG}
-    entrypoint:
-      - bash
+    
+
+    labels:
+      - image_generator
+      - persistent
