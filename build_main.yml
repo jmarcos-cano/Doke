@@ -1,5 +1,0 @@
----
-- name:
-  hosts: localhost
-  roles:
-    - devops/nuget-packager
