@@ -28,6 +28,7 @@ clean: ## cleans bin/, packages/, nuget (nupkg) and any docker-compose asset (co
 	-rm -rf bin
 	$(DOCKER_COMPOSE) stop
 	$(DOCKER_COMPOSE) kill
+	$(DOCKER_COMPOSE) down
 
 compile: #clean ## compiles the solution inside a docker container
 	@ ${INFO} "Starting source-code compiler..."
@@ -36,9 +37,10 @@ compile: #clean ## compiles the solution inside a docker container
 
 docker: compile ## runs nuget package
 	@ ${INFO} "Building Docker image ${IMAGE}:${VERSION} ..."
-	$(DOCKER_COMPOSE) build --no-cache image_generator 
+	$(DOCKER_COMPOSE) build --no-cache --force-rm docker_image_generator 
 	
-
-
+config:
+	$(DOCKER_COMPOSE) config
+ 
 default:
 	all
