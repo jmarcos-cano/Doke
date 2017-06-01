@@ -1,8 +1,14 @@
 FROM node:6.10-alpine 
 
 ### APP
-ARG bin_path
-ADD ${bin_path} ${APP_HOME}/
+
+ENV APP_HOME=/var/www/app
+WORKDIR ${APP_HOME}
+ARG bin_path 
+ADD ${bin_path} ./
+CMD ["node", "./app.js"]
+EXPOSE 3000
+
 
 
 ### METADATA
