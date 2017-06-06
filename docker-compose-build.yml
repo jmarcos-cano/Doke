@@ -7,14 +7,11 @@ services:
       - ${SRC_CODE_DIR}:/var/www/app/
       #- ./${OUTPUT_DIR}:/${OUTPUT_DIR}
     entrypoint: sh -c ${BUILD_COMMAND}
-
     
     labels:
-      - ephemeral
-      - volatile
-      - compiler
+      - temporarily
 
-  docker_image_generator:
+  service_docker_image:
     image: "${IMAGE}:${VERSION}"
     depends_on:
       - compiler
@@ -29,9 +26,7 @@ services:
         GIT_REPO: ${GIT_REPO}
         VERSION: ${VERSION}
         BUILD_DATE: ${BUILD_DATE}
-        BUILD_TAG: ${BUILD_TAG}
-    
+        BUILD_TAG: ${BUILD_TAG}   
 
     labels:
-      - image_generator
-      - persistent
+      - image
