@@ -1,58 +1,85 @@
-Doke
-====
 
-# short description
+```bash
+██████╗  ██████╗ ██╗  ██╗███████╗
+██╔══██╗██╔═══██╗██║ ██╔╝██╔════╝
+██║  ██║██║   ██║█████╔╝ █████╗  
+██║  ██║██║   ██║██╔═██╗ ██╔══╝  
+██████╔╝╚██████╔╝██║  ██╗███████╗
+╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝
+```
+
+
 Doke sounds dope, so why not?
-simple Make + docker-compose to build Docker images ala Victor Farcic.
+
+Simple [Make](https://www.gnu.org/gnu/gnu.html) + [docker-compose](https://docs.docker.com/compose/) to build [Docker](https://docs.docker.com/) images alla Victor Farcic.
 
 
 Description
 -----------
-While reading Victor Farcic's "The DevOps 2.0 Toolkit & The DevOps 2.1 Toolkit: docker swarm" I found myself that maybe docker-compose might be the right tool to have an agnostic build server, What I mean for that is "imagine a build server which only needs Docker installed ...", yes! one of Docker purposes is to reduce dependency hell, but hey that kinda hell also happens in build servers not only in running environments. 
+While reading Victor Farcic's *"[The DevOps 2.0 Toolkit](https://www.amazon.com/dp/B01BJ4V66M/ref=cm_sw_r_cp_dp_T1_cdOnzbDXQ78GZ) & [The DevOps 2.1 Toolkit](https://www.amazon.com/dp/B01N25BVHX/ref=cm_sw_r_cp_dp_T1_PdOnzbNJJX6YW)"* I found myself thinking that docker-compose might be the right tool to have an language agnostic build server, What I mean is: "imagine a build server which only needs Docker installed ", yes! one of Docker purposes is to reduce dependency hell, but hey that kinda hell also happens in build servers not only in running environments. 
 
 So I came up with an idea to wrap up what Victor uses in his books. see the following:
 
-docker-compose fragment
+docker-compose fragment (from the book)
 ``` bash
-1 unit:
-2 image: golang:1.6
-3 volumes:
-4 - .:/usr/src/myapp
-5 - /tmp/go:/go
-6 working_dir: /usr/src/myapp
-7 command: bash -c "go get -d -v -t && go test --cover -v ./... && go build -v\
-8 -o go-demo"
+version: '2'
+services:
+	unit:
+	  image: golang:1.6
+	  volumes:
+	  - .:/usr/src/myapp
+	  - /tmp/go:/go
+	  working_dir: /usr/src/myapp
+	  command: bash -c "go get -d -v -t && go test --cover -v ./... && go build -v\
+	  -o go-demo"
 ```
 
-to run it:
-```bash
-1 docker-compose \
-2 -f docker-compose-test-local.yml \
-3 run --rm unit
+and to run it:
+```bash 
+docker-compose \
+ -f docker-compose-test-local.yml \
+ run --rm unit
 ```
 
-^^ see all you have to memorize or ctl+c ctl+v?
+> ^^^ see all you have to memorize or copy-paste
 
-so why not just running :
+so why not just run (to run unit tests) ?:
 
 ```bash
 make unit 
 ```
 
+or to build a Docker image with [label-schema](http://label-schema.org/rc1/) included ?
+ 
+```bash
+make build
+```
+
+  
+
 with all batteries included, pretty cool huh? 
 
-If I've catch you keep reading.
+If I've catch your attention keep reading.
 
 # TLDR;
 
+simple wrapper over what Victor Farcic uses as docker-compose "building service binaries, run unit tests & building services images".
+
+that will let you:
+
+- run unit tests inside temporarily docker container  
+- build your source code inside temporarily docker container and generate a Docker images with label-schema included.
+
+# Components:
+
+- [`Makefile`](docs/makefile.md): wrapper around docker-compose commands.
+- [`docker-compose-build.yml`](docs/docker-compose.md) : defines your services, compiler (temp) and image generators.
+- `.Makefile.settings.mk`: intended for managing cosmetics and some build metadata
+- `.env`: this is were you place all your default values for Build enviroment (docker-compose)
 
 
-# components:
+# Installation
 
-- Makefile: wrapper around docker-compose commands.
-- docker-compose-build.yml: defines your services, compiler (eph) and image generators.
-- .Makefile.settings.mk: intended for managing cosmetics and inplace build metadata
-- .env: this is were you place all your default values for Build enviroment (docker-compose)
 
 # Run
 
