@@ -1,7 +1,7 @@
 include .Makefile.settings.mk
 
 
-TARGETS= clean compile docker info
+TARGETS= clean compile docker label
 
 
 DOCKER_COMPOSE_FILE= docker-compose-build.yml
@@ -23,23 +23,23 @@ include $(DOCKER_COMPOSE_ENV_FILE)
 
 all: $(TARGETS) 
 
-clean: ## cleans bin/, packages/, nuget (nupkg) and any docker-compose asset (container)
+clean: ## cleans bin/ and any docker-compose asset (containers & networks)
 	@ ${INFO} "Cleaning"
 	-rm -rf bin
 	$(DOCKER_COMPOSE) stop
 	$(DOCKER_COMPOSE) kill
 	$(DOCKER_COMPOSE) down
 
-compile: #clean ## compiles the solution inside a docker container
+compile: #clean ## compiles the source code inside a docker container
 	@ ${INFO} "Starting source-code compiler..."
 	$(DOCKER_COMPOSE) run --rm  compiler
 
 
-docker: compile ## runs nuget package
+docker: compile ## generates a Docker image with label-schema included
 	@ ${INFO} "Building Docker image ${IMAGE}:${VERSION} ..."
-	$(DOCKER_COMPOSE) build --no-cache --force-rm docker_image_generator 
+	$(DOCKER_COMPOSE) build --no-cache --force-rm service_docker_image 
 	
-config:
+config: ## shows docker-compose config command
 	$(DOCKER_COMPOSE) config
  
 default:

@@ -31,7 +31,7 @@ metadata= "Docker image was created  \n\
       BUILD_TAG: $(BUILD_TAG) \n\
       "
 
-info:
+label: ## prints out label-schema metadata
 	@ ${INFO} ${metadata}
 	@printf ${metadata} > ${metadata_file}
 
