@@ -35,6 +35,10 @@ compiler:
 ```
 
 
+### Makefile wrapper command
+
+`docker-compose -f docker-compose-build.yml  run --rm service_docker_image `
+
 
 # Examples
 using the previous snippet docker-compose-build.yml fragment

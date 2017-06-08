@@ -8,7 +8,7 @@
 ╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝
 ```
 
-
+@jmarcos-cano
 Doke sounds dope, so why not?
 
 Simple [Make](https://www.gnu.org/gnu/gnu.html) + [docker-compose](https://docs.docker.com/compose/) to build [Docker](https://docs.docker.com/) images alla Victor Farcic.
@@ -25,8 +25,9 @@ Table of Contents:
     - [Builders](./docs/builders.md)
   - [Makefile](./docs/makefile.md)
     - [.Makefile.settings.mk](./docs/makefile.settings.mk)
-
-
+- [Installation](#installation)
+- [Usage](#usage)
+- [ToDo](#todo)
 
 # Description 
 
@@ -97,12 +98,12 @@ that will let you:
 # Installation
 
 
-# Run
+# Usage
 
 - `make help` 
 
 
-## TODO
+## ToDo
 
-- installation via curl | bash
-- `make init`, to setup all the fill in the blanks (read -p)
+[] installation via curl | bash
+[] `make init`, to setup all the fill in the blanks (read -p)

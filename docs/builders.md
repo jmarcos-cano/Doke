@@ -54,7 +54,9 @@ service_docker_image:
 ```
 
 
+### Makefile wrapper command
 
+`docker-compose -f docker-compose-build.yml build --no-cache --force-rm service_docker_image `
 
 # Examples
 
