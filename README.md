@@ -20,10 +20,11 @@ Table of Contents:
 - [Description](#description) 
 - [TL;DR](#tl-dr)
 - [Components](#components)
-  - [Makefile](./docs/makefile.md)
   - [docker-compose-build.yml](./docs/docker-compose.md)
     - [Compilers](./docs/compilers.md)
     - [Builders](./docs/builders.md)
+  - [Makefile](./docs/makefile.md)
+    - [.Makefile.settings.mk](./docs/makefile.settings.mk)
 
 
 
@@ -87,8 +88,8 @@ that will let you:
 
 # Components:
 
-- [`Makefile`](docs/makefile.md): wrapper around docker-compose commands.
 - [`docker-compose-build.yml`](docs/docker-compose.md) : defines your services, compiler (temp) and image generators.
+- [`Makefile`](docs/makefile.md): wrapper around docker-compose commands.
 - `.Makefile.settings.mk`: intended for managing cosmetics and some build metadata
 - `.env`: this is were you place all your default values for Build enviroment (docker-compose)
 
