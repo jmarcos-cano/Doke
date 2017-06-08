@@ -10,7 +10,7 @@
 
 
 
-## [.Makefile.settings.mk](./.makefile.settings.md)
+## [.Makefile.settings.mk](./makefile.settings.md)
 
 this is where some cosmetics happens and where some of the environment variables used as build-args are calculated.
 
