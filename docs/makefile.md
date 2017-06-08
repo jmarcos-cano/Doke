@@ -1,7 +1,9 @@
 [home](../README.md)
 
 # Makefile 
+This is where all your docker-compose commands are wrapped.
 
+Instead of memorizing and typing or looking into your bash history (ctrl+R or `history|grep -- 'docker-compose'` )
 
 
 
