@@ -9,7 +9,7 @@ services:
     entrypoint: sh -c ${BUILD_COMMAND}
     
     labels:
-      - temporarily
+      - compiler
 
   service_docker_image:
     image: "${IMAGE}:${VERSION}"

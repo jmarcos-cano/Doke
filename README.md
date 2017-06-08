@@ -14,8 +14,21 @@ Doke sounds dope, so why not?
 Simple [Make](https://www.gnu.org/gnu/gnu.html) + [docker-compose](https://docs.docker.com/compose/) to build [Docker](https://docs.docker.com/) images alla Victor Farcic.
 
 
-Description
------------
+Table of Contents:
+-----
+
+- [Description](#description) 
+- [TL;DR](#tl-dr)
+- [Components](#components)
+  - [Makefile](./docs/makefile.md)
+  - [docker-compose-build.yml](./docs/docker-compose.md)
+    - [Compilers](./docs/compilers.md)
+    - [Builders](./docs/builders.md)
+
+
+
+# Description 
+
 While reading Victor Farcic's *"[The DevOps 2.0 Toolkit](https://www.amazon.com/dp/B01BJ4V66M/ref=cm_sw_r_cp_dp_T1_cdOnzbDXQ78GZ) & [The DevOps 2.1 Toolkit](https://www.amazon.com/dp/B01N25BVHX/ref=cm_sw_r_cp_dp_T1_PdOnzbNJJX6YW)"* I found myself thinking that docker-compose might be the right tool to have an language agnostic build server, What I mean is: "imagine a build server which only needs Docker installed ", yes! one of Docker purposes is to reduce dependency hell, but hey that kinda hell also happens in build servers not only in running environments. 
 
 So I came up with an idea to wrap up what Victor uses in his books. see the following:
@@ -61,7 +74,7 @@ with all batteries included, pretty cool huh?
 
 If I've catch your attention keep reading.
 
-# TLDR;
+# TL;DR
 
 simple wrapper over what Victor Farcic uses as docker-compose "building service binaries, run unit tests & building services images".
 
@@ -69,6 +82,8 @@ that will let you:
 
 - run unit tests inside temporarily docker container  
 - build your source code inside temporarily docker container and generate a Docker images with label-schema included.
+
+
 
 # Components:
 
