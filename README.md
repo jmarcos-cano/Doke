@@ -68,7 +68,7 @@ make unit
 or to build a Docker image with [label-schema](http://label-schema.org/rc1/) included ?
  
 ```bash
-make build
+make docker
 ```
 
   
