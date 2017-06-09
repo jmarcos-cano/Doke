@@ -50,7 +50,7 @@ services:
 	  -o go-demo"
 ```
 
-and to run it:
+And to run it:
 ```bash 
 docker-compose \
  -f docker-compose-test-local.yml \
@@ -59,16 +59,21 @@ docker-compose \
 
 > ^^^ see all you have to memorize or copy-paste
 
-so why not just run (to run unit tests) ?:
+So why not just run (to run unit tests) ?:
 
 ```bash
 make unit 
 ```
 
-or to build a Docker image with [label-schema](http://label-schema.org/rc1/) included ?
+Or to build a Docker image with [label-schema](http://label-schema.org/rc1/) included ?
  
 ```bash
 make docker
+```
+Or even better to: download dependencies, run unit tests, build binary and create Docker image
+
+```bash
+make
 ```
 
 pretty cool huh? 
