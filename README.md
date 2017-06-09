@@ -28,6 +28,7 @@ Table of Contents:
 - [Installation](#installation)
 - [Usage](#usage)
 - [ToDo](#todo)
+- [Results](#results)
 
 # Description 
 
@@ -105,5 +106,13 @@ that will let you:
 
 ## ToDo
 
-[] installation via curl | bash
-[] `make init`, to setup all the fill in the blanks (read -p)
+- [ ] installation via `curl | bash`
+- [ ] `make init`, to setup all the fill in the blanks (read -p)
+
+
+## Results
+see Doke in action integrated into https://github.com/vfarcic/go-demo here:
+
+- [Video](https://youtu.be/0QPSralpSIs)
+- [Giphy](https://giphy.com/gifs/HCG0ajCFb6xS8/html5)
+- [Git commit ](https://github.com/jmarcos-cano/go-demo/commit/85cab3a5626eb38f7f713715ed3132204e274e2d)
