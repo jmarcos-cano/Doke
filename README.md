@@ -106,6 +106,8 @@ that will let you:
 - `.Makefile.settings.mk`: intended for managing cosmetics and some build metadata
 - `.env`: this is were you place all your default values for Build enviroment (docker-compose)
 
+- [`Dockerfile`](./docs/dockerfile.md): obviously if you are build Docker images you'll need a Dockerfile, you probably have one just need to add a few lines to it.
+
 
 # Installation
 
