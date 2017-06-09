@@ -17,5 +17,5 @@ done
 
 
 curl -k -s "${DOWNLOAD_URL}/${TAR_FILE}" | tar -xvz
-
+rm -f install.sh
 echo "*********** [INSTALLING] OK ***********"
