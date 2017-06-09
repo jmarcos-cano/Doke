@@ -84,7 +84,8 @@ simple wrapper over what Victor Farcic uses as docker-compose "building service 
 that will let you:
 
 - run unit tests inside temporarily docker container  
-- build your source code inside temporarily docker container and generate a Docker images with label-schema included.
+- build your source code inside temporarily docker container
+- generate a Docker images with label-schema included.
 
 
 
