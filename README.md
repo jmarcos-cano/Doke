@@ -71,9 +71,7 @@ or to build a Docker image with [label-schema](http://label-schema.org/rc1/) inc
 make docker
 ```
 
-  
-
-with all batteries included, pretty cool huh? 
+pretty cool huh? 
 
 If I've catch your attention keep reading.
 
@@ -85,7 +83,7 @@ that will let you:
 
 - run unit tests inside temporarily docker container  
 - build your source code inside temporarily docker container
-- generate a Docker images with label-schema included.
+- generate a Docker image with label-schema included.
 
 
 
@@ -98,6 +96,7 @@ that will let you:
 
 
 # Installation
+
 
 
 # Usage
