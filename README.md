@@ -124,8 +124,7 @@ curl  https://raw.githubusercontent.com/jmarcos-cano/Doke/master/installation/in
 
 - [x] installation via `curl | bash`
 - [ ] `make init`, to setup all the fill in the blanks (read -p)
-- more examples
-- 
+- [ ] more examples
 
 ## Results
 see Doke in action integrated into https://github.com/vfarcic/go-demo here:
