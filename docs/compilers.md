@@ -17,6 +17,8 @@ Compilers need the following enviroment variables in order to work for you:
 
 > Note: environment variables can be set in the current environment via export VAR=VAR or preferably in the .env file 
 
+[.env](./env.md)
+
 
 # Usage
 
@@ -90,3 +92,5 @@ the result of `docker-compose -f docker-compose-build.yml config`
 
 #### Notes
 > obviously you decide to hard-code the image and entrypoint in the docker-compose file, but I've found easier to set it in .env file and just use "template" like dcompose services 
+
+[.env](./env.md)

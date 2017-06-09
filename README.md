@@ -23,8 +23,11 @@ Table of Contents:
   - [docker-compose-build.yml](./docs/docker-compose.md)
     - [Compilers](./docs/compilers.md)
     - [Builders](./docs/builders.md)
+    - [.env](./docs/env.md)
   - [Makefile](./docs/makefile.md)
     - [.Makefile.settings.mk](./docs/makefile.settings.mk)
+  - [Dockerfile](./docs/dockerfile.md)
+
 - [Installation](#installation)
 - [Usage](#usage)
 - [ToDo](#todo)
@@ -32,7 +35,7 @@ Table of Contents:
 
 # Description 
 
-While reading Victor Farcic's *"[The DevOps 2.0 Toolkit](https://www.amazon.com/dp/B01BJ4V66M/ref=cm_sw_r_cp_dp_T1_cdOnzbDXQ78GZ) & [The DevOps 2.1 Toolkit](https://www.amazon.com/dp/B01N25BVHX/ref=cm_sw_r_cp_dp_T1_PdOnzbNJJX6YW)"* I found myself thinking that docker-compose might be the right tool to have an language agnostic build server, What I mean is: "imagine a build server which only needs Docker installed ", yes! one of Docker purposes is to reduce dependency hell, but hey that kinda hell also happens in build servers not only in running environments. 
+While reading Victor Farcic's *"[The DevOps 2.0 Toolkit](https://www.amazon.com/dp/B01BJ4V66M) & [The DevOps 2.1 Toolkit](https://www.amazon.com/dp/B01N25BVHX)"* I found myself thinking that docker-compose might be the right tool to have an language agnostic build server, What I mean is: "imagine a build server which only needs Docker installed ", yes! one of Docker purposes is to reduce dependency hell, but hey that kinda hell also happens in build servers not only in running environments. 
 
 So I came up with an idea to wrap up what Victor uses in his books. see the following:
 
@@ -59,13 +62,17 @@ docker-compose \
 
 > ^^^ see all you have to memorize or copy-paste
 
-So why not just run (to run unit tests) ?:
+
+<br>
+-------
+
+Instead, for running unit tests we can simply:
 
 ```bash
 make unit 
 ```
 
-Or to build a Docker image with [label-schema](http://label-schema.org/rc1/) included ?
+Or to build a Docker image with [label-schema](http://label-schema.org/rc1/) included:
  
 ```bash
 make docker
@@ -86,8 +93,8 @@ simple wrapper over what Victor Farcic uses as docker-compose "building service 
 
 that will let you:
 
-- run unit tests inside temporarily docker container  
-- build your source code inside temporarily docker container
+- run unit tests inside temporarily Docker container  
+- build your source code inside temporarily Docker container
 - generate a Docker image with label-schema included.
 
 
