@@ -111,7 +111,9 @@ that will let you:
 
 # Installation
 
-
+```bash
+curl  https://raw.githubusercontent.com/jmarcos-cano/Doke/master/installation/install.sh |bash
+```
 
 # Usage
 
