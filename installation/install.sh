@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "*********** [INSTALLING] Doke ***********"
+echo "*********** [INSTALLING] in $(pwd) ***********"
 
 DOWNLOAD_URL=https://raw.githubusercontent.com/jmarcos-cano/Doke/master/downloads
 TAR_FILE=doke.tar.gz
@@ -15,3 +17,5 @@ done
 
 
 curl -k -s "${DOWNLOAD_URL}/${TAR_FILE}" | tar -xvz
+
+echo "*********** [INSTALLING] OK ***********"
