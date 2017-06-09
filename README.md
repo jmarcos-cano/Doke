@@ -85,7 +85,7 @@ make
 
 pretty cool huh? 
 
-If I've catch your attention keep reading.
+If I've your attention keep reading.
 
 # TL;DR
 
@@ -122,9 +122,10 @@ curl  https://raw.githubusercontent.com/jmarcos-cano/Doke/master/installation/in
 
 ## ToDo
 
-- [ ] installation via `curl | bash`
+- [x] installation via `curl | bash`
 - [ ] `make init`, to setup all the fill in the blanks (read -p)
-
+- more examples
+- 
 
 ## Results
 see Doke in action integrated into https://github.com/vfarcic/go-demo here:

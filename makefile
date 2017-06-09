@@ -1,12 +1,15 @@
 FILES=.env .Makefile.settings.mk docker-compose-build.yml Makefile .dockerignore
 SRC_CODE_PATH=doke-src
 BUILD_FILE=build.txt
+
 TARGETS= clean doke.tar.gz
 
 
 ARTIFACT_NAME=doke.tar.gz
 ARTIFACTS_DIR=downloads
 MAX_ARTIFACTS_TO_KEEP=5
+
+
 
 
 export GIT_COMMIT ?= $(shell git rev-parse --short HEAD)
