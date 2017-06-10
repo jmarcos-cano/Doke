@@ -18,7 +18,7 @@ Table of Contents:
 -----
 
 - [Description](#description) 
-- [TL;DR](#tl-dr)
+- [TL;DR](#tldr)
 - [Components](#components)
   - [docker-compose-build.yml](./docs/docker-compose.md)
     - [Compilers](./docs/compilers.md)
