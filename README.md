@@ -63,9 +63,7 @@ docker-compose \
 > ^^^ see all you have to memorize or copy-paste
 
 
-<br>
--------
-
+__________________
 Instead, for running unit tests we can simply:
 
 ```bash
