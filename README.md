@@ -63,7 +63,7 @@ docker-compose \
 > ^^^ see all you have to memorize or copy-paste
 
 
-__________________
+_________________
 Instead, for running unit tests we can simply:
 
 ```bash
@@ -123,6 +123,9 @@ curl  https://raw.githubusercontent.com/jmarcos-cano/Doke/master/installation/in
 - [x] installation via `curl | bash`
 - [ ] `make init`, to setup all the fill in the blanks (read -p)
 - [ ] more examples
+- [ ] update to start using Docker multi-stage images, the project was "created" even before multi-stage images
+
+
 
 ## Results
 see Doke in action integrated into https://github.com/vfarcic/go-demo here:

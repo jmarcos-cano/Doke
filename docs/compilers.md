@@ -1,7 +1,7 @@
 [home](../README.md)
 
 # Purpose
-Mainly used for compiling code & running unit tests. Compilers are ephemeral containers used to run commands inside of them. 
+Mainly used for compiling code & running unit tests. Compilers are ephemeral containers used to `run` commands inside of them. 
 
 
 # Requirements
