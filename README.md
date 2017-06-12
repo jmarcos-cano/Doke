@@ -2,8 +2,8 @@
 ```bash
 ██████╗  ██████╗ ██╗  ██╗███████╗
 ██╔══██╗██╔═══██╗██║ ██╔╝██╔════╝
-██║  ██║██║   ██║█████╔╝ █████╗  
-██║  ██║██║   ██║██╔═██╗ ██╔══╝  
+██║  ██║██║   ██║█████╔╝ █████╗
+██║  ██║██║   ██║██╔═██╗ ██╔══╝
 ██████╔╝╚██████╔╝██║  ██╗███████╗
 ╚═════╝  ╚═════╝ ╚═╝  ╚═╝╚══════╝
 ```
@@ -17,7 +17,7 @@ Simple [Make](https://www.gnu.org/gnu/gnu.html) + [docker-compose](https://docs.
 Table of Contents:
 -----
 
-- [Description](#description) 
+- [Description](#description)
 - [TL;DR](#tldr)
 - [Components](#components)
   - [docker-compose-build.yml](./docs/docker-compose.md)
@@ -33,9 +33,9 @@ Table of Contents:
 - [ToDo](#todo)
 - [Results](#results)
 
-# Description 
+# Description
 
-While reading Victor Farcic's *"[The DevOps 2.0 Toolkit](https://www.amazon.com/dp/B01BJ4V66M) & [The DevOps 2.1 Toolkit](https://www.amazon.com/dp/B01N25BVHX)"* I found myself thinking that docker-compose might be the right tool to have an language agnostic build server, What I mean is: "imagine a build server which only needs Docker installed ", yes! one of Docker purposes is to reduce dependency hell, but hey that kinda hell also happens in build servers not only in running environments. 
+While reading Victor Farcic's *"[The DevOps 2.0 Toolkit](https://www.amazon.com/dp/B01BJ4V66M) & [The DevOps 2.1 Toolkit](https://www.amazon.com/dp/B01N25BVHX)"* I found myself thinking that docker-compose might be the right tool to have a language agnostic build server, What I mean is: "imagine a build server which only needs Docker installed ", yes! one of Docker purposes is to reduce dependency hell, but hey that kinda hell also happens in build servers not only in running environments.
 
 So I came up with an idea to wrap up what Victor uses in his books. see the following:
 
@@ -54,7 +54,7 @@ services:
 ```
 
 And to run it:
-```bash 
+```bash
 docker-compose \
  -f docker-compose-test-local.yml \
  run --rm unit
@@ -67,11 +67,11 @@ _________________
 Instead, for running unit tests we can simply:
 
 ```bash
-make unit 
+make unit
 ```
 
 Or to build a Docker image with [label-schema](http://label-schema.org/rc1/) included:
- 
+
 ```bash
 make docker
 ```
@@ -81,7 +81,7 @@ Or even better to: download dependencies, run unit tests, build binary and creat
 make
 ```
 
-pretty cool huh? 
+pretty cool huh?
 
 If I've your attention keep reading.
 
@@ -91,7 +91,7 @@ simple wrapper over what Victor Farcic uses as docker-compose "building service 
 
 that will let you:
 
-- run unit tests inside temporarily Docker container  
+- run unit tests inside temporarily Docker container
 - build your source code inside temporarily Docker container
 - generate a Docker image with label-schema included.
 
@@ -104,7 +104,7 @@ that will let you:
 - `.Makefile.settings.mk`: intended for managing cosmetics and some build metadata
 - `.env`: this is were you place all your default values for Build enviroment (docker-compose)
 
-- [`Dockerfile`](./docs/dockerfile.md): obviously if you are build Docker images you'll need a Dockerfile, you probably have one just need to add a few lines to it.
+- [`Dockerfile`](./docs/dockerfile.md): obviously if you are building Docker images you'll need a Dockerfile, you probably have one and just need to add a few lines to it.
 
 
 # Installation
@@ -115,10 +115,10 @@ curl  https://raw.githubusercontent.com/jmarcos-cano/Doke/master/installation/in
 
 # Usage
 
-- `make help` 
+- `make help`
 
 
-## ToDo
+## TODO
 
 - [x] installation via `curl | bash`
 - [ ] `make init`, to setup all the fill in the blanks (read -p)
