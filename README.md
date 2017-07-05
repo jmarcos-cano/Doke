@@ -128,7 +128,7 @@ curl  https://raw.githubusercontent.com/jmarcos-cano/Doke/master/installation/in
 
 
 ## Results
-see Doke in action integrated into https://github.com/vfarcic/go-demo here:
+see Doke in action integrated into https://github.com/vfarcic/go-demo here: https://github.com/jmarcos-cano/go-demo
 
 #### Victor Farcic's go-demo
 - [Video](https://youtu.be/0QPSralpSIs)
@@ -137,3 +137,8 @@ see Doke in action integrated into https://github.com/vfarcic/go-demo here:
 - [Docker Image](https://hub.docker.com/r/mcano/go-demo/)
 
 #### Marcos Cano's giphy
+
+#### Further Reading
+
+- https://blog.alexellis.io/mutli-stage-docker-builds/
+- https://php-and-symfony.matthiasnoback.nl/2017/04/docker-build-patterns/
